@@ -1765,8 +1765,18 @@
 	 */
 	Editor.mermaidToDrawio = function(graph, diagramtype, exta)
 	{
+		console.log("Inside mermaid function");
+		console.log("-------------------------------------------");
+		console.log("graph:", graph);
+		console.log("-----------------------------------------------");
+		console.log("diagramtype:", diagramtype);
+		console.log("-----------------------------------------------");
+		console.log("exta:", exta);
+		console.log("-----------------------------------------------");
 		if (typeof mxMermaidToDrawio === 'function')
 		{
+			console.log("Inside if statement");
+			console.log("-----------------------------------------------");
 			return mxMermaidToDrawio(graph, diagramtype, exta);
 		}
 	};
