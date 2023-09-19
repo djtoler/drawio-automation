@@ -1768,7 +1768,7 @@
 		console.log("Inside mermaid function");
 		console.log("-------------------------------------------");
 		console.log("graph:", graph);
-		console.log("-----------------------------------------------");
+		console.log("---------------------------------------------");
 		console.log("diagramtype:", diagramtype);
 		console.log("-----------------------------------------------");
 		console.log("exta:", exta);
