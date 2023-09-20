@@ -2137,6 +2137,7 @@ var ParseDialog = function(editorUi, title, defaultType)
 		}
 		else if (type == 'mermaid' || type == 'mermaid2drawio')
 		{
+			console.log("using mermaid");
 			if (editorUi.spinner.spin(document.body, mxResources.get('inserting')))
 			{
 				var k = 0;
@@ -2156,11 +2157,14 @@ var ParseDialog = function(editorUi, title, defaultType)
 							diagramType != 'quadrantchart' && diagramType != 'c4context';
 
 				var graph = editorUi.editor.graph;
+				console.log("graph: ", graph);
 				
 				if (inDrawioFormat)
 				{
+					console.log("Inside dialog.js 2162");
 					mxMermaidToDrawio.addListener(mxUtils.bind(this, function(modelXml)
 					{
+						console.log("Inside dialog.js 2165");
 						editorUi.spinner.stop();
 						graph.setSelectionCells(editorUi.importXml(modelXml,
 							Math.max(insertPoint.x, 20),
@@ -2190,6 +2194,7 @@ var ParseDialog = function(editorUi, title, defaultType)
 					finally
 					{
 						graph.getModel().endUpdate();
+						console.log("getModel");
 					}
 					
 					if (cell != null)
@@ -3321,8 +3326,10 @@ var NewDialog = function(editorUi, compact, showName, callback, createOnly, canc
 			{
 				mxMermaidToDrawio.addListener(mxUtils.bind(this, function(modelXml)
 				{
+					console.log("Inside dialog.js 3324");
 					if (!useMermaidFormat)
 					{
+						console.log("Inside dialog.js 3327");
 						templateXml = modelXml;
 						lastAiXml = templateXml;
 					}
